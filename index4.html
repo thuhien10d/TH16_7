@@ -8,13 +8,25 @@
 </head>
 
 <body>
-    <input type="text" id="x" placeholder="nhập x">
-    <input type="text" id="y" placeholder="nhập y">
-    <button id="btnCheck">Check</button>
+    <input type="number" id="nhapx" placeholder="nhập x">
+    <input type="number" id="nhapy" placeholder="nhập y">
+    <span id="total"></span>
+    <button id="btnCheck">Tinhtong</button> <br>
     <script>
-        var x = document.getElementById('x')
-        var y = document.getElementById('y')
+        var x = document.getElementById('nhapx')
+        var y = document.getElementById('nhapy')
         var btnCheck = document.getElementById('btnCheck')
+        var total = document.getElementById('total')
+        btnCheck.addEventListener('click', Tinhtong)
+
+
+        function Tinhtong() {
+            var a = Number(x.value)
+            var b = Number(y.value)
+            var tong = a + b;
+            console.log(tong)
+            total.innerText = "tổng hai số là" + tong;
+        }
     </script>
 </body>
 
