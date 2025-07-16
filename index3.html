@@ -9,5 +9,24 @@
 
 <body>
     <input type="text" id="textinput">
-    <button id="btnCheck" </body>
+    <button id="btnCheck">Check</button>
+    <span id="display"></span>
+    <script>
+        var textinput = document.getElementById('textinput')
+        var btnCheck = document.getElementById('btnCheck')
+        var display = document.getElementById('display')
+
+        function calltoCheck() {
+            var pattern = /\d/;
+            var value = textinput.value;
+            if (value == '') {
+                display.innerText = 'Null';
+            } else if (pattern.test(value)) {
+                display.innerText = 'Number';
+            } else display.innerText = 'Text';
+        }
+        btnCheck.onclick = calltoCheck;
+    </script>
+</body>
+
 </html>
