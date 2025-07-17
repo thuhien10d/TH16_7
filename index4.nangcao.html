@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Kiểm tra ngày đơn giản</title>
+</head>
+<body>
+
+  <h3>Kiểm tra ngày</h3>
+  <input id="dateInput" type="text" placeholder="nhập DD-MM-YYYY">
+  <p id="result"></p>
+  <button onclick="checkDate()">Kiểm tra</button>
+
+  <script>
+    function checkDate() {
+      const input = document.getElementById('dateInput').value;
+      const result = document.getElementById('result');
+
+      const num = input.split("-");
+      if (num.length !== 3) {
+        result.innerText = "";
+        return;
+      }
+
+      var day = Number(num[0]);
+      var month = Number(num[1]);
+      var year = Number(num[2]);
+
+      var date = new Date(year, month - 1, day);
+
+      console.log(date.getDate() === day && date.getMonth() === month - 1 && date.getFullYear() === year);
+
+      if (date.getDate() === day && date.getMonth() === month - 1 && date.getFullYear() === year) {
+        result.innerText = "Ngày hợp lệ";
+      } else {
+        result.innerText = "Ngày không hợp lệ";
+      }
+    }
+</script>
+
+</body>
+</html>
