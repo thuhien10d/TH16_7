@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính tổng 2 số</title>
+    <style>
+        .error {
+            color: red;
+        }
+        .success {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h2>Tính tổng 2 số</h2>
+    <input type="text" id="nhapx" placeholder="Nhập số thứ nhất">
+    <input type="text" id="nhapy" placeholder="Nhập số thứ hai">
+    <span id="ketqua"></span>
+    <button id="btnCheck">Tinhtong</button> <br>
+    <div id="thongbao"></div>
+    <div id="ketqua"></div>
+
+    <script>
+
+        var x = document.getElementById('nhapx')
+        var y = document.getElementById('nhapy')
+        var btnCheck = document.getElementById('btnCheck')
+        var ketqua = document.getElementById('ketqua')
+        btnCheck.addEventListener('click', Tinhtong)
+        var thongbao = document.getElementById("thongbao");
+
+        function Tinhtong() {
+
+            var a = Number(x.value)
+            var b = Number(y.value)
+            if (a == '' || b == '') {
+                thongbao.innerText = " Vui lòng nhập đầy đủ hai số.";
+                thongbao.className = 'error';
+                return;
+            }
+
+            if (isNaN(a) || isNaN(b)) {
+                thongbao.innerText = " Bạn nhập không phải là số.";
+                thongbao.className = 'error';
+                return;
+            }
+
+            // Chuyển về kiểu số và tính tổng
+            var a = Number(x.value)
+            var b = Number(y.value)
+            var tong = a + b;
+            console.log(tong)
+            ketqua.innerText = " Tổng hai số là " + tong;
+            ketqua.className = 'success';
+        };
+    </script>
+</body>
+</html>
