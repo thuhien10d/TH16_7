@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error{
+            background: red;
+            color: white;
+        }
+        .success{
+            background: green;
+        }
+    </style>
+</head>
+<body>
+    <input id="number" type="text" placeholder="number">
+    <span id="mobilenumber"></span>
+    <br>
+    <button id="btnCheck">Check</button>
+
+    <script>
+        var number = document.getElementById('number');
+        var btnCheck = document.getElementById('btnCheck');
+        var mobilenumber = document.getElementById('mobilenumber')
+        btnCheck.onclick = () => {
+            console.log(number.value);
+            checkmobilenumber();
+        }
+            function checkmobilenumber() {
+            var pattern =/^\d{10}$/;
+
+            var logic = pattern.test(number.value);
+            console.log(logic);
+            if (logic) {
+                mobilenumber.innerText = 'Đúng';
+                mobilenumber.className = 'success';
+            }
+            else {
+                mobilenumber.innerText = 'Please check input';
+                mobilenumber.className = 'error';
+            }
+            return logic;
+        }
+    </script>
+</body>
+</html>
