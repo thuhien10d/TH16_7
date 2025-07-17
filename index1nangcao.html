@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error{
+            background: red;
+            color: white;
+        }
+        .success{
+            background: green;
+        }
+    </style>
+</head>
+<body>
+    <input id="number" type="text" placeholder="number">
+    <span id="spannumber"></span>
+    <br/>
+    <button id="btnCheck">Check</button>
+
+    <script>
+        var number = document.getElementById('number');
+        var spannumber = document.getElementById('spannumber');
+        var btnCheck = document.getElementById('btnCheck');
+        btnCheck.onclick = () => {
+            console.log(number.value);
+            checkNumber();
+        }
+            function checkNumber() {
+            var pattern =/\d/;
+
+            var logic = pattern.test(number.value);
+            console.log(logic);
+            if (logic) {
+                spannumber.innerText = 'Đúng';
+                spannumber.className = 'success';
+            }
+            else {
+                spannumber.innerText = 'Please check input:';
+                 spannumber.className = 'error';
+            }
+            return logic;
+        }
+    </script>
+</body>
+</html>
