@@ -3,14 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Tính tổng 2 số</title>
-    <style>
-        .error {
-            color: red;
-        }
-        .success {
-            color: green;
-        }
-    </style>
+
 </head>
 <body>
     <h2>Tính tổng 2 số</h2>
@@ -36,13 +29,11 @@
             var b = Number(y.value)
             if (a == '' || b == '') {
                 thongbao.innerText = " Vui lòng nhập đầy đủ hai số.";
-                thongbao.className = 'error';
                 return;
             }
 
             if (isNaN(a) || isNaN(b)) {
                 thongbao.innerText = " Bạn nhập không phải là số.";
-                thongbao.className = 'error';
                 return;
             }
 
@@ -52,7 +43,6 @@
             var tong = a + b;
             console.log(tong)
             ketqua.innerText = " Tổng hai số là " + tong;
-            ketqua.className = 'success';
         };
     </script>
 </body>
