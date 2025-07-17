@@ -7,7 +7,6 @@
     <style>
         .error{
             background: red;
-            color: white;
         }
         .success{
             background: green;
@@ -16,7 +15,8 @@
 </head>
 <body>
     <input id="number" type="text" placeholder="number">
-    <span id="spannumber"></span>
+    <span id="spannumber" class="error"></span>
+    <span id="spansuccess" class="success"></span>
     <br/>
     <button id="btnCheck">Check</button>
 
@@ -24,22 +24,24 @@
         var number = document.getElementById('number');
         var spannumber = document.getElementById('spannumber');
         var btnCheck = document.getElementById('btnCheck');
+        var spansuccess = document.getElementById('spansuccess')
         btnCheck.onclick = () => {
             console.log(number.value);
             checkNumber();
         }
             function checkNumber() {
             var pattern =/\d/;
+            
+            spannumber.innerText = '';
+            spansuccess.innerText = '';
 
             var logic = pattern.test(number.value);
             console.log(logic);
             if (logic) {
-                spannumber.innerText = 'Đúng';
-                spannumber.className = 'success';
+                spansuccess.innerText = 'success';
             }
             else {
                 spannumber.innerText = 'Please check input:';
-                 spannumber.className = 'error';
             }
             return logic;
         }
