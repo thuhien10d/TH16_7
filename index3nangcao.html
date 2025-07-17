@@ -20,7 +20,7 @@
     <input id="mobilenumber" type="text" placeholder="mobilenumber">
     <span id ="spanmobilenumber" class="error"></span>
     </br>
-    <span id="spansuccess"></span>
+    <span id="spansuccess" class="success"></span>
     <br/>
     <button id="btnCheck">Check</button>
 <script>
@@ -46,11 +46,9 @@
             console.log(logic);
             if (logic) {
                 spannumber.innerText = '';
-                spannumber.className = '';
             }
             else {
                 spannumber.innerText = 'Please check input';
-                spannumber.className = 'error';
             }
             return logic;
         }
@@ -62,12 +60,10 @@
             console.log(logic);
             if (logic) {
                 spanmobilenumber.innerText = '';
-                spanmobilenumber.className = '';
 
             }
             else {
                 spanmobilenumber.innerText = 'Please check input'
-                spanmobilenumber.className = 'error'
             }
             return logic;
         }
@@ -75,10 +71,8 @@
         function checkAll (isNumber, isPhone) {
             if (isNumber && isPhone) {
                 spansuccess.innerText = 'success';
-                spansuccess.className = 'success'
             } else {
                 spansuccess.innerText = '';
-                spansuccess.className = '';
             }
             }
 </script>
